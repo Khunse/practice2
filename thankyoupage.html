@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color:hsl(216, 12%, 8%);
+            color: white;
+            font-family: 'Overpass', sans-serif;
+        }
+        .container{
+            background-color: hsl(213, 19%, 18%);
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 5%;
+            text-align: center;
+            border-radius: 20px;
+        }
+        @media (max-width: 500px) {
+          .container{
+            width: 80%;
+          }
+        }
+        .rate{
+            margin-top: 20px;
+            display: inline-block;
+            color: hsl(25, 97%, 53%);
+            background-color: hsl( 213, 26%, 21%);
+            padding: 10px 15px;
+            border-radius: 30px;
+        }
+
+        .text p{
+            font-size: 15px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./images/illustration-thank-you.svg" alt="Thank You">
+        </div>
+        <div class="rate">
+            You select <span id="ra"></span> out of 5
+        </div>
+        <div class="text">
+            <h1>Thank you!</h1>
+            <p>
+                We appreciate you talking the time to give
+                a rating. If you ever need more support,
+                don't hesitate to get in touch!
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    let a=localStorage.getItem('vall'); 
+    document.getElementById('ra').innerHTML = a;
+</script>
+</html>

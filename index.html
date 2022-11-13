@@ -1,1 +1,144 @@
-<h1>sample<h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+ <script src="./jquery-3.6.1.js"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    body{
+      background-color: hsl(216, 12%, 8%);
+      font-family: 'Overpass', sans-serif;
+      color: white;
+    }
+    .container{
+      width: 400px;
+    }
+    @media (max-width: 500px) {
+      .container{
+        width: 90%;
+      }
+    }
+    .test{
+      margin-bottom: 50px;
+      background-color: hsl(213, 19%, 18%);
+      padding: 30px;
+      border-radius: 20px;
+    }
+    .center{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .logo{
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 5px;
+      border-radius: 50%;
+      background-color: hsl( 213, 26%, 21%);
+  padding: 10px;
+      position: relative;
+    }
+
+    .description p{
+      font-size: 15px;
+      opacity: 0.5;
+    }
+
+    .stars{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .stars *{
+      width: 20px;
+      height: 20px;
+      float: left;
+      text-decoration: none;
+      color: white;
+      padding: 15px;
+      background-color: hsl( 213, 26%, 21%);
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    .button a{
+      display: block;
+      margin-top: 30px;
+      background-color: hsl(25, 97%, 53%);
+      text-align: center;
+      padding: 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+    }
+    .button a:hover{
+      background-color: white;
+      color: hsl(25, 97%, 53%);
+      cursor: pointer;
+    }
+   
+    .stars div:hover{
+      background-color: hsl(25, 97%, 53%)!important;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container center">
+  <div class="test">
+  <div class="logo">
+    <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg" class="center"><path d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z" fill="#FC7614"/></svg>
+  </div>
+  <div class="description">
+    <h1>How did we do?</h1>
+    <p>
+      Please let us know how we did with your support request. All feedback is appriciated to help us improve our offering!
+    </p>
+  </div>
+  <div class="stars">
+    <div name="1">1</div>
+    <div name="2">2</div>
+    <div name="3">3</div>
+    <div name="4">4</div>
+    <div name="5">5</div>
+  </div>
+<div class="button">
+ <a href="./thankyoupage.html">SUBMIT</a>
+</div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/Khunse">Khunse</a>.
+  </div>
+</div>
+
+</body>
+<Script>
+  let vall="0";
+  let a;
+ 
+$('.stars div').click(function(){
+  if(a){
+    $(`[name=${a}]`).css('background-color','hsl( 213, 26%, 21%)');
+  }
+ vall=$(this).html();
+ $(this).css('background-color','grey');
+
+a=$(this).attr('name');
+});
+
+$('.button').click(function(){
+  localStorage.setItem('vall',vall);
+})
+</Script>
+</html>
